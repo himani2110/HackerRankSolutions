@@ -1,0 +1,20 @@
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int i = sc.nextInt();
+        double d = sc.nextDouble();
+        sc.nextLine();
+        /* So basically here the extra sc.next is added in th code as when we take an input 
+        in java by clicking enter and going to the next line it keeps "\n" as a buffer due to the addition of an extra line. So in this code also 
+        when you press enter after the double, it takes the "\n" as the string and hence doesnot print any value or input we give. This is why we add that extra
+        input for the line. */
+        String s = sc.nextLine();
+        sc.close();
+        System.out.println("String: " + s);
+        System.out.println("Double: " + d);
+        System.out.println("Int: " + i);
+    }
+}
