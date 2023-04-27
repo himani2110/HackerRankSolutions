@@ -1,0 +1,40 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+static Scanner sc = new Scanner(System.in);
+static int B = sc.nextInt();
+static int H= sc.nextInt();
+static boolean flag;
+static{
+   try{
+       if(B>0 && H>0){
+           flag=true;
+       } else{
+           throw new Exception();
+       }
+   } catch(Exception e){
+       System.out.println("java.lang.Exception: Breadth and height must be positive");
+   }
+   /*
+   Java supports a special block, called a static block (also called static clause) that can be used for static initialization of a class. This code inside the static block is executed only once: the first time the class is loaded into memory. 
+   The try statement allows you to define a block of code to be tested for errors while it is being executed.
+The catch statement allows you to define a block of code to be executed, if an error occurs in the try block.
+The try and catch keywords come in pairs.
+The throw statement allows you to create a custom error.
+The throw statement is used together with an exception type. There are many exception types available in Java
+   */
+}
+public static void main(String[] args){
+		if(flag){
+			int area=B*H;
+			System.out.print(area);
+		}
+		
+	}//end of main
+
+}//end of class
