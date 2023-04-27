@@ -1,0 +1,49 @@
+import java.util.*;
+import java.security.*;
+public class Solution {
+ public static void main(String[] args) {
+
+  DoNotTerminate.forbidExit();
+
+  try {
+   Scanner in = new Scanner(System.in);
+   int n = in .nextInt();
+   in.close();
+   //String s=???; Complete this line below
+   //Integer.toString(int) turns the int into a string
+    String s = Integer.toString(n);
+   
+   if (n == Integer.parseInt(s)) {
+   //This method parses the String argument as a signed decimal integer object. 
+   //The characters in the string must be decimal digits, except that the first character of the string may be an ASCII minus sign '-' to indicate a negative value or an ASCII plus '+' sign to indicate a positive value. 
+   //It returns the integer value which is represented by the argument in a decimal integer.
+   System.out.println("Good job");
+   } else {
+    System.out.println("Wrong answer.");
+   }
+  } catch (DoNotTerminate.ExitTrappedException e) {
+   System.out.println("Unsuccessful Termination!!");
+  }
+ }
+}
+
+//The following class will prevent you from terminating the code using exit(0)!
+class DoNotTerminate {
+
+ public static class ExitTrappedException extends SecurityException {
+
+  private static final long serialVersionUID = 1;
+ }
+
+ public static void forbidExit() {
+  final SecurityManager securityManager = new SecurityManager() {
+   @Override
+   public void checkPermission(Permission permission) {
+    if (permission.getName().contains("exitVM")) {
+     throw new ExitTrappedException();
+    }
+   }
+  };
+  System.setSecurityManager(securityManager);
+ }
+}
